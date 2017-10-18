@@ -3,18 +3,18 @@ Microbial Intelligence
 ======================
 
 
-.. image:: https://img.shields.io/pypi/v/microbial_ai.svg
-        :target: https://pypi.python.org/pypi/microbial_ai
+.. image:: https://img.shields.io/pypi/v/microbial-ai.svg
+        :target: https://pypi.python.org/pypi/microbial-ai
 
-.. image:: https://img.shields.io/travis/dileep-kishore/microbial_ai.svg
-        :target: https://travis-ci.org/dileep-kishore/microbial_ai
+.. image:: https://img.shields.io/travis/dileep-kishore/microbial-ai.svg
+        :target: https://travis-ci.org/dileep-kishore/microbial-ai
 
 .. image:: https://readthedocs.org/projects/microbial-ai/badge/?version=latest
         :target: https://microbial-ai.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/dileep-kishore/microbial_ai/shield.svg
-     :target: https://pyup.io/repos/github/dileep-kishore/microbial_ai/
+.. image:: https://pyup.io/repos/github/dileep-kishore/microbial-ai/shield.svg
+     :target: https://pyup.io/repos/github/dileep-kishore/microbial-ai/
      :alt: Updates
 
 
