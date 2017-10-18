@@ -7,7 +7,7 @@ import pytest
 
 from click.testing import CliRunner
 
-from microbial_ai import microbial_ai
+# from microbial_ai import microbial_ai
 from microbial_ai import cli
 
 

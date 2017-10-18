@@ -18,7 +18,7 @@ requirements = [
 
 setup_requirements = [
     'pytest-runner',
-    # TODO(dileep-kishore): put setup requirements (distutils extensions, etc.) here
+    # TODO: put setup requirements (distutils extensions, etc.) here
 ]
 
 test_requirements = [
@@ -29,7 +29,8 @@ test_requirements = [
 setup(
     name='microbial_ai',
     version='0.1.0',
-    description="Microbial growth simulation incorporating adaptation through reinforcement learning",
+    description=("Microbial growth simulation incorporating adaptation "
+                 "through reinforcement learning"),
     long_description=readme + '\n\n' + history,
     author="Dileep Kishore",
     author_email='dkishore@bu.edu',
