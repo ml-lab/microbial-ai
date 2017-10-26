@@ -2,8 +2,8 @@
 * text=auto
 
 # Treat Coconut and Python template files as Python
-*.coco          diff=python
-*.py_template   diff=python
+*.coco diff=python
+*.py_template diff=python
 
 # Linguist settings
 *.coco linguist-language=Python
