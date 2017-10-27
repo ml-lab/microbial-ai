@@ -2,6 +2,11 @@
 Microbial Intelligence
 ======================
 
+.. image:: https://img.shields.io/badge/App-Python%203.6-blue.svg
+        :alt: Python
+
+.. image:: https://img.shields.io/badge/Compatibility-Linux-orange.svg
+        :alt: Compatibility
 
 .. image:: https://img.shields.io/pypi/v/microbial-ai.svg
         :target: https://pypi.python.org/pypi/microbial-ai
