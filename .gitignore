@@ -63,3 +63,6 @@ target/
 
 # ignore gurobi folder
 gurobi751/
+
+# ignore vscode
+.vscode/

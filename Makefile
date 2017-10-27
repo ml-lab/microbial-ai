@@ -41,11 +41,14 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
+	find . -name '.mypy_cache' -exec rm -fr {} +
+	find . -name '.cache' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
 	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
+	rm -fr .benchmarks
 
 lint: ## check style with flake8
 	pipenv run flake8 src/microbial_ai tests
