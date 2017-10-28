@@ -31,6 +31,7 @@ pytest-cov = "*"
 pytest-benchmark = "*"
 sphinx = "*"
 pylint = "*"
+scipy = "*"
 
 
 [requires]
