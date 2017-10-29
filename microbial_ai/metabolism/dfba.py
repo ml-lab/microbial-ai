@@ -6,10 +6,9 @@
 Module that handles the dFBA simulation of the genome scale metabolic network
 """
 
-from typing import Sequence
+from typing import Sequence, FrozenSet
 import cobra
-from cobra import Model
-from microbial_ai import Metabolites
+from microbial_ai import Metabolite, Microbe
 
 class DFBA:
     """
@@ -22,10 +21,38 @@ class DFBA:
             Tuple of metabolites present at the start of the simulation
         Attributes:
         ----------
-        models : List
+        models : frozenset
             List of organims in the simulation
-        metabolites : List
+        metabolites : frozenset
             List of metaboites in the simulation
     """
-    def __init__(self, init_models: Sequence[Model], init_mets: Sequence[Metabolites]) -> None:
-        pass
+    def __init__(self, init_models: Sequence[Microbe], init_mets: Sequence[Metabolite]) -> None:
+        self.models = frozenset(init_models)
+        self.metabolites = frozenset(init_mets)
+
+    @property
+    def model_names(self) -> FrozenSet[str]:
+        """
+            Get names of the organisms currently in the simulation
+            Returns:
+            -------
+            FrozenSet[str]
+                FrozenSet of all the models in the simulation
+        """
+        return frozenset((x.name for x in self.models))
+
+    @property
+    def metabolite_names(self) -> FrozenSet[str]:
+        """
+            Get names of the metabolites currently in the simulation
+            Returns:
+            -------
+            FrozenSet[str]
+                FrozenSet of all the metabolites in the simulation
+        """
+        return frozenset((x.name for x in self.metabolites))
+
+    #TODO: Update procedures for models and metabolites
+
+    #TODO: Implement a method using a deque object that lets the simulation class pick models one at a time
+    # Need to randomize it?
