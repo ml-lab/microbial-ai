@@ -1,18 +1,18 @@
 # @Author: dileep
-# @Date: 2017-10-29 00:56:13
 # @Last Modified by:   dileep
 
 """
 Module the encodes the functionality and the behavior of a metabolite
 """
 
-from cobra import Metabolite as CobraMet
-from cobra import Reaction as CobraRxn
 import re
+import numpy as np
+from cobra import Metabolite as CobraMet
+from microbial_ai.metabolism import ExReaction
 
 class Metabolite:
     """
-        Class that represents an external metabolite in the dFBA simulation
+        Class that represents a metabolite in the dFBA simulation
         Parameters:
         ----------
         cobra_met : CobraMet
@@ -84,17 +84,74 @@ class Metabolite:
             compartment = 'unknown'
         return compartment
 
-    @classmethod
-    def from_exchangerxn(cls, exchange_rxn: CobraRxn) -> Metabolite:
+class ExMetabolite(Metabolite):
+    """
+        Class that represents an external metabolite in the dFBA simulation
+        Parameters:
+        ----------
+        cobra_met : CobraMet
+            Metabolite in the Cobra format
+        Attributes:
+        ----------
+        name : str
+            Name of the metabolite
+        id : str
+            ID of the metabolite in the corresponding model
+        compartment : str
+            Compartment to which the metabolite belongs to
+        annotation : str
+            Model ids in various databases. Might be empty
+        model_id : str
+            Model to which the metabolite belongs to
+    """
+    def __init__(self, cobra_met: CobraMet) -> None:
+        super().__init__(cobra_met)
+        assert self.compartment == 'extracellular', "Metabolite not extracellular"
+        self.concentration = np.float()
+        self.equation #make this a sympy equation
+
+    def update_equation(self, exchange_rxn: ExReaction) -> bool:
         """
-            Construct metabolite class from Cobra exchange reaction
+            Add update rule from the given exchange reaction and returns True if success
+            Parameters:
+            ----------
+            exchange_rxn : ExReaction
+                Exchange reaction that involves the current metabolite
+            Returns:
+            -------
+            bool
+                True if the metabolite exchange rule was successfully updated otherwise False
+        """
+        #1. Check whether reaction has met
+        #2. Update self.eqauation with references to the reactions
+        pass
+
+    def do_step(self, dt: np.float) -> np.float:
+        """
+            Updates the concentration for the given time-step and returns the new concentration
+            Parameters:
+            ----------
+            dt : np.float
+                Time step for which the concentration has to be updated
+            Returns:
+            -------
+            np.float
+                New concentration after update
+        """
+        #1. Run the update rule with given time step
+        pass
+
+    @classmethod
+    def from_exreaction(cls, exchange_rxn: ExReaction) -> "ExMetabolite":
+        """
+            Construct metabolite class from exchange reaction
             Parameters:
             ----------
             exchange_rxn : CobraRxn
                 Exchange reaction in Cobra format
             Returns:
             -------
-            Metabolite
-                Metabolite class instance containing the metabolite from the exchange reaction
+            ExMetabolite
+                ExMetabolite class instance containing the metabolite from the exchange reaction
         """
         pass
