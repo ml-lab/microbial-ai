@@ -1,5 +1,4 @@
 # @Author: dileep
-# @Date: 2017-10-29 02:00:42
 # @Last Modified by:   dileep
 
 class Simulation:
